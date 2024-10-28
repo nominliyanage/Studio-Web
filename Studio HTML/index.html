@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"    
+    />
+    <style>
+        body{
+            margin: 0px;
+            background: linear-gradient(to right, rgb(222, 220, 220), rgb(181, 181, 181));
+        }
+        
+        .container{
+            width:100%;
+            height: 50px;
+            position: fixed;
+            color: rgb(5, 5, 5);
+            /* background-color: lightgray; */
+            /* background: linear-gradient(to right, lightgray, rgb(93, 92, 92)); */
+            /* border: 1px solid black; */
+            padding: 12px;
+ 
+            word-spacing: 30px; 
+            font-size: 20px;
+        }
+
+        .mainmenu-navigation{
+            text-align: right;
+            margin-top: -2.5rem;
+            margin-right: 3rem;
+        }
+
+        h1{
+            font-size: 50px;
+            color: rgb(187, 35, 35);
+            text-shadow: 10px;
+            font-style: italic;
+            text-align: center;
+        }
+        h2{
+            font-size: 30px;
+            color: rgb(150, 32, 32);
+            text-shadow: 10px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .burger {
+            display: none;
+            color: red;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0;
+            position: fixed;
+            top: 40px;
+            right: 40px;
+        }
+
+        .menu-panel {
+            background-color: #333;
+            color: white;
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            transition: right 0.4s ease;
+        }
+
+        .menu-panel ul {
+            list-style: none;
+            padding: 50px 20px;
+        }
+
+        .menu-panel ul li {
+            margin-bottom: 20px;
+        }
+
+        .menu-panel ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .close-btn {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .image2{
+            display: none;
+        }
+
+        @media screen and (max-width: 575px) {
+                .nav-links {
+                display: none;
+                }
+                .burger {
+                opacity: 1;
+                display: block;
+                }
+                .menu-panel.active {
+                right: 0;
+                }
+                .container-img{
+                    display: none;
+                }
+                .image2{
+                    display: block;
+                }
+        }
+
+        /* .container-img{
+            width: 300vw;
+            height: 100vh;
+            display: flex;
+            animation: slide 10s linear infinite ;
+            transform: translateX(-200vw);
+        } */
+
+        /* .container-img img{
+            width: 100vw;
+            height: calc(100vh-50px);
+        }
+        
+        @keyframes slide {
+            0%,15% {
+            transform: translateX(0);
+        }
+
+            40%,55%{
+            transform: translateX(-100vw);
+        }
+
+            85%,100%{
+            transform: translateX(-200vw);
+        }
+    
+        } */
+
+        /* Container for the image */
+        /* .container.img {
+            position: relative;
+            width: 200px; /* Set the initial width of the image 
+            height: auto;
+        } */
+
+        /* Image styling */
+        /* .image-container img {
+            width: auto;
+            height: auto;
+            transition: transform 0.3s ease; /* Smooth transition for hover effect 
+            cursor: pointer;
+        } */
+
+        /* Scale image on hover */
+        /* .image-container:hover img {
+            transform: scale(1.5); /* Enlarge the image to 1.5 times
+        } */
+        
+        
+    </style>
+</head>
+<body>
+<header>
+    <section id="home"; class="content">
+        <div class="container">
+            <img src="/assets/images/Logo.jpg" style="height: 70px; width: 70px; object-fit: cover;" alt="Logo">
+            <nav >
+            <div class="mainmenu-navigation nav-links" style="margin-top: -60px;">
+                <!-- style= "text-align:end; margin-top: -40px; touch-action: pan-y;" -->
+                <a href="#home" style="color: red; text-decoration: none;">Home</a>
+                <a href="#about" style="color: red; text-decoration: none;">About</a>
+                <a href="#service" style="color: red; text-decoration: none;">Services</a>
+                <a href="#gallery" style="color: red; text-decoration: none;">Gallery</a>
+                <a href="#contact" style="color: red; text-decoration: none;">Contact</a>
+            </div>
+            <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
+            </nav>
+        </div>
+        <div class="menu-panel" id="menu-panel-id">
+            <button class="close-btn" id="btn-close">&times;</button>
+                <ul>
+                    <li><a href="/index.html#home" style="color: red; text-decoration: none;">Home</a></li>
+                    <li><a href="/index.html#about" style="color: red; text-decoration: none;">About</a></li>
+                    <li><a href="/index.html#service" style="color: red; text-decoration: none;">Services</a></li>
+                    <li><a href="/index.html#gallery" style="color: red; text-decoration: none;">Gallery</a></li>
+                    <li><a href="/index.html#contact" style="color: red; text-decoration: none;">Contact</a></li>
+                </ul>
+        </div>
+        <div class="container-img">
+            <div class="image">
+                <img src="/assets/images/416099315_817019177106434_6932400235475405352_n.jpg" style="height: 700px; width:100%; object-fit:cover;" alt="cover">
+                <!-- style="height: 700px; width:1519px; object-fit:cover;" -->
+            </div>
+        </div>
+        <div class="image2">
+            <img src="/assets/images/416081420_817018803773138_740699093860083173_n.jpg" style="height: 100%; width:100%; object-fit:cover;" alt="cover">
+        </div>
+    </section>
+    <br>
+</header>
+ <br>
+
+<section id="about">
+
+    <div>
+    <h1>Glamor Shot Studio</h1>
+    <h2>We Love to Capture Beauty, Emotions and Magic Moments</h2>
+
+    <p style="font-size: 25px; margin: 15px;">The business is a well-established and reputable photo studio that offers a wide range of 
+    professional photography services. With over 15 years of experience in the industry, the 
+    studio has built a strong reputation for delivering high-quality work and exceptional customer 
+    service. The studio caters to a diverse clientele, including individuals, families, commercial 
+    businesses, and high-profile events. Services offered include Wedding photography 
+    Engagement photography, Birthday photography, Casual photography, Modeling photography, Clothing brand photography and more.
+    </p>
+    <br>
+    </div>
+    <!-- <h3>Photographers</h3> -->
+    <div style="text-align: center;">
+    <img src = "/assets/images/395573601_1866418653753609_254229971292366496_n.jpg" style="width:200px; height:250px; object-fit: cover;" alt="My Image">
+    <!-- <img src = "/assets/images/343833245_210597101679209_8960957807463101856_n.jpg" style="width:200px; height:250px; object-fit: cover;" alt="My Image"> -->
+    <p style="font-size: 25px;"><b>-- Profile Of Nomin Yasanjith Liyanage --</b></p>
+    <p style="font-size: 20px;">Nomin Yasanjith Liyanage is a popular Sri Lankan Photographer with over a decade of professional experience, specialized on wedding, fine-art and portrait photography.</p>
+    </div>
+    <br>
+</section>
+<br>
+
+<section id="service">
+    <br>
+    <h2 style="font-size: 35px;">Services</h2>
+    <div style="margin:15px; font-size:25px;">
+        <p>
+            At Glamor Shot Studio, we believe that every moment is worth preserving, and we are passionate about turning your most cherished memories into timeless works of art. Specializing in a wide range of photography services – from weddings and events to portraits and commercial shoots – we combine artistic vision with technical expertise to deliver stunning images that truly reflect the essence of your special moments. Our dedicated team works closely with you to understand your story, ensuring that each photograph captures the emotions, atmosphere, and unique details that make your experience unforgettable. With a blend of creativity, professionalism, and personalized service, we are committed to delivering photographs that you will treasure for a lifetime.
+        </p>
+    </div>
+    <br>
+    <nav>
+        <div style="font-size: 22px;; color: brown">
+            <ul>
+                <li><a href = "/pages/wedding-shoot.html"> <span style="color: brown">Wedding Shoot</span></a></li>
+                <br>
+                <li><a href = "/pages/engagement-shoot.html"> <span style="color: brown">Engagement Shoot</span></a></li>
+                <br>
+                <li><a href = "/pages/birthday-shoot.html"> <span style="color: brown">Birthday Shoot</span></a></li>
+                <br>
+                <li><a href = "/pages/casual-shoot.html"> <span style="color: brown">Casual Shoot</span></a></li>
+                <br>
+                <li><a href = "/pages/modeling-shoot.html"> <span style="color: brown">Modeling Shoot</span></a></li>
+                <br>
+                <li><a href = "/pages/clothing-brand-shoot.html"> <span style="color: brown">Clothing Brand Shoot</span></a></li>
+                </ul>
+        </div>
+       </nav>
+</section>
+<br>
+
+<section id="gallery">
+    <br>
+    <h2 style="font-size: 35px;">Gallery</h2>
+    <div style="margin-left: 40px;">
+        <img src = "/assets/images/336372072_1427163098042599_8653531883722834784_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/341060333_561417852754814_6007577636486518791_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/354831055_690014459806907_1643063000841638905_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/416061606_817019503773068_7791564824122463664_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/418891947_818385606969791_1832430450099979990_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/418904691_818386626969689_3343091428132214610_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/416081420_817018803773138_740699093860083173_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/416061895_814980700643615_1566550170638596795_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <br>
+        <img src = "/assets/images/329642833_571973368205486_2723140493115831038_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/445787628_912246290917055_1944243682635372409_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/387842282_762155149259504_1286646151873059428_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/410182186_802086425266376_6801533185189420278_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/408145435_928752845389497_3858388752055254325_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/273216922_489843119157720_512966961705543000_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/329359995_882464059618449_1888592828390055608_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/371935813_736468891828130_5026582788005526348_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+    </div>
+   </section>   
+<br>
+
+<section id="contact">
+
+    <h2 style="font-size: 35px;">Contact</h2>
+    <div style="font-size: 22px; text-align: center;">
+        <p>
+            Address:
+            <br>
+            No.123, Matara Road, Galle.
+            <br><br><br>
+            Mobile:
+            <br>
+            0758847325 <br>
+            0704577719
+            <br><br><br>
+            Office:
+            <br>
+            0912345678
+            <br><br><br>
+            Email:
+            <br>
+            glamorshotstudiox@gmail.com
+            <br><br><br>
+            Website:
+            <br>
+            glamorshotstudio.lk
+        </p>
+
+        <img src = "/assets/icons/fb.png" style="width:50px; height:50px; object-fit: cover;" alt="FB">
+        <img src = "/assets/icons/instagram.png" style="width:50px; height:50px; object-fit: cover;" alt="Inster">
+        <img src = "/assets/icons/whatsapp.png" style="width:50px; height:50px; object-fit: cover;" alt="WA">
+        <img src = "/assets/icons/linkedin.png" style="width:50px; height:50px; object-fit: cover;" alt="Linked">
+    </div>
+</section>
+<br>
+<footer style="text-align: center;">
+        
+    <p>&copy; 2024 Studio. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+    const burger = document.getElementById("burger");
+    const menuPanel = document.getElementById("menu-panel-id");
+    const closeBtn = document.getElementById("btn-close");
+
+    burger.addEventListener("click", () => {
+      menuPanel.classList.toggle("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      menuPanel.classList.remove("active");
+    });
+</script>
+</body>
+</html>

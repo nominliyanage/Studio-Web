@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casual Shoot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"    
+    />
+
+    <style>
+        body{
+            margin: 0px;
+            background: linear-gradient(to right, rgb(222, 220, 220), rgb(181, 181, 181));
+        }
+
+        .menu{
+            /* width:100%; */
+            height: 50px;
+            /* position: fixed; */
+            color: rgb(5, 5, 5);
+            /* background-color: lightgray; */
+            /* background: linear-gradient(to right, lightgray, rgb(93, 92, 92)); */
+            /* border: 1px solid black; */
+            padding: 12px;
+ 
+            word-spacing: 30px; 
+            font-size: 20px;
+        }
+        .mainmenu-navigation{
+            text-align: right;
+            margin-top: -2.5rem;
+            margin-right: 3rem;
+        }
+
+        h2{
+            color: red;
+            text-align: center;
+        }
+        
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* gap: 8px; */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .box{
+            width: auto;
+            height: auto;
+            text-align: center;
+            background-color: rgb(255, 250, 230);
+            border: 1px solid black;
+            margin: 16px;
+            padding: 12px;
+        }
+
+        .box ul li{
+            text-align: center;
+        }
+
+        .burger {
+            display: none;
+            color: red;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0;
+            position: fixed;
+            top: 40px;
+            right: 40px;
+        }
+
+        .menu-panel {
+            background-color: #333;
+            color: white;
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            transition: right 0.4s ease;
+        }
+
+        .menu-panel ul {
+            list-style: none;
+            padding: 50px 20px;
+        }
+
+        .menu-panel ul li {
+            margin-bottom: 20px;
+        }
+
+        .menu-panel ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .close-btn {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+
+            @media screen and (min-width: 0px) and (max-width: 424px) {
+                .container {
+                grid-template-columns: repeat(1, 1fr);
+                }
+            }
+            @media screen and (max-width: 575px) {
+                .nav-links {
+                display: none;
+                }
+                .burger {
+                opacity: 1;
+                display: block;
+                }
+                .menu-panel.active {
+                right: 0;
+                }
+            }
+            @media screen and (min-width: 425px) and (max-width: 767px) {
+                .container {
+                grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media screen and (min-width: 768px) and (max-width: 1399px) {
+                .container {
+                grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <img src="/assets/images/Logo.jpg" style="height: 70px; width: 70px; object-fit: cover;" alt="Logo">
+            <nav >
+            <div class="mainmenu-navigation nav-links" style="margin-top: -60px;">
+                <!-- style= "text-align:end; margin-top: -40px; touch-action: pan-y;" -->
+                <a href="/index.html#home" style="color: red; text-decoration: none;">Home</a>
+                <a href="/index.html#about" style="color: red; text-decoration: none;">About</a>
+                <a href="/index.html#service" style="color: red; text-decoration: none;">Services</a>
+                <a href="/index.html#gallery" style="color: red; text-decoration: none;">Gallery</a>
+                <a href="/index.html#contact" style="color: red; text-decoration: none;">Contact</a>
+            </div>
+            <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
+            </nav>
+        </div>
+        <div class="menu-panel" id="menu-panel-id">
+            <button class="close-btn" id="btn-close">&times;</button>
+                <ul>
+                    <li><a href="/index.html#home" style="color: red; text-decoration: none;">Home</a></li>
+                    <li><a href="/index.html#about" style="color: red; text-decoration: none;">About</a></li>
+                    <li><a href="/index.html#service" style="color: red; text-decoration: none;">Services</a></li>
+                    <li><a href="/index.html#gallery" style="color: red; text-decoration: none;">Gallery</a></li>
+                    <li><a href="/index.html#contact" style="color: red; text-decoration: none;">Contact</a></li>
+                </ul>
+        </div>
+
+    <h2 style="font-size: 35px;">Casual Shoot</h2>
+
+    <p style="font-size: 25px; margin: 15px;">
+        Are you looking for an experienced destination photographer for your casual-shoot? You found us! Our packages are designed to appeal to everyone.
+    <br>
+        We understand that choosing the right photographer is an important decision, and we're here to help you through the process. Take a look at our package options below, and please don't hesitate to contact us if you have any questions. We look forward to working with you to create a beautiful collection of memories that you'll treasure for a lifetime.
+    </p>
+    </header>
+    <br>
+    
+    <section>
+        <!-- First Line -->
+        <div class="container">
+            <div class="box">
+                <img src = "/assets/images/416099315_817019177106434_6932400235475405352_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Gold">
+                <p style="font-size: 20px; font-weight: 800;">Gold Package</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+            <div class="box">
+                <img src = "/assets/images/354439348_690014393140247_1728483892605276140_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Platinum">
+                <p style="font-size: 20px; font-weight: 800;">Platinum Package</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+            <div class="box">
+                <img src = "/assets/images/336352295_1166086477397987_7869696548227740073_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Diamond">
+                <p style="font-size: 20px; font-weight: 800;">Diamond Package</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+        <!-- </div> -->
+        <!-- Second Line -->
+        <!-- <div class="container"> -->
+            <div class="box">
+                <img src = "/assets/images//353597146_3432654470327221_8042093564087586381_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Diamond">
+                <p style="font-size: 20px; font-weight: 800;">Pre-Wedding Package</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+            <div class="box">
+                <img src = "/assets/images/424926779_3591429497783050_7432280085923380022_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Diamond">
+                <p style="font-size: 20px; font-weight: 800;">Engagement Package</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+            <div class="box">
+                <img src = "/assets/images/346038629_259503796528090_1624814097804633252_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Diamond">
+                <p style="font-size: 20px; font-weight: 800;">HomeComing Package</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+        <!-- </div> -->
+        <!-- Third Line -->
+        <!-- <div class="container"> -->
+            <div class="box">
+                <img src = "/assets/images/336352295_1166086477397987_7869696548227740073_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Diamond">
+                <p style="font-size: 20px; font-weight: 800;">Cinematography Package I</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+            <div class="box">
+                <img src = "/assets/images/336352295_1166086477397987_7869696548227740073_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Diamond">
+                <p style="font-size: 20px; font-weight: 800;">Cinematography Package II</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+            <div class="box">
+                <img src = "/assets/images/336352295_1166086477397987_7869696548227740073_n.jpg" style="width:300px; height:200px; object-fit: cover;" alt="Diamond">
+                <p style="font-size: 20px; font-weight: 800;">Cinematography Package III</p>
+                <ul style="padding-left: 12px;">
+                    <li>Up to 10 hours of exclusive coverage</li>
+                    <li>One Photographer</li>
+                    <li>30 pages (15 spreads ) 8*24 fine art album</li>
+                    <li>Thank You Card 100</li>
+                    <li>One Fine art framed Enlargement 16*24</li>
+                    <li>All retouched high-resolution images</li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+    <br>
+
+    <section>
+    <h2>Samples</h2>
+        <div style="margin-left: 40px;">
+        <img src = "/assets/images/336372072_1427163098042599_8653531883722834784_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/341060333_561417852754814_6007577636486518791_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/354831055_690014459806907_1643063000841638905_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/416061606_817019503773068_7791564824122463664_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/277800659_3111407049118633_4709132554973444830_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/310986865_3253128984946438_239731198923825156_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/416081420_817018803773138_740699093860083173_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/416061895_814980700643615_1566550170638596795_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <br>
+        <img src = "/assets/images/416028824_3560799164179417_8288362237416262295_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/277790708_3110236619235676_409981254917371946_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/277802348_3112838765642128_583393625692370893_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/301866018_3217972968462040_3520035329941914053_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/301265258_3218316348427702_7878119123747238966_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/354634697_3436947389897929_2935242441368579161_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/416016933_3560796610846339_7773339177373143932_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        <img src = "/assets/images/324792015_1138350523543308_4657022397085732417_n.jpg" style="width:175px; height:275px; object-fit: cover;" alt="Gallery">
+        </div>
+    <br>
+    </section>
+
+    <script>
+        const burger = document.getElementById("burger");
+        const menuPanel = document.getElementById("menu-panel-id");
+        const closeBtn = document.getElementById("btn-close");
+  
+        burger.addEventListener("click", () => {
+          menuPanel.classList.toggle("active");
+        });
+  
+        closeBtn.addEventListener("click", () => {
+          menuPanel.classList.remove("active");
+        });
+      </script>
+      
+</body>
+</html>
